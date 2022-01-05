@@ -9,6 +9,9 @@
         $result = mysqli_query($conn,$query);
         $row = mysqli_fetch_assoc($result);
     }
+    $query1 = "select rname, id, rating from resto ORDER BY rating DESC";
+    $result1 = mysqli_query($conn,$query1);
+    $row1 = mysqli_fetch_assoc($result1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +57,7 @@
             </div>
         </section>
         <br>
-        <h4 class='text-center'>Our Partnered Brands </h4>
+        <h4 class='text-center'>Our Partnered Brands </h4> <hr>
         <div class="caro-paro">
             <div class="caro-cell cell-1">
                 <img name='caro-img' src="../static/images/restos/mcd_belapur.jpg" alt="">
@@ -72,21 +75,32 @@
                 <img name='caro-img' src="../static/images/restos/taco_seawoods.jpg" alt="">
             </div>
         </div>
+        <hr>
         <br>
         <h4 class='text-center'>Top Reviewed Restaurants near You</h4>
         <div id="top-rev">
-            <div class="top-rev-img">
-                <img src="../static/images/restos/kfc_seawoods.jpg" alt="">
+            <div class="top-rev">
+                <img src="../static/images/restos/<?php echo $row1['id']?>.jpg" alt=""><br>
+                <button class='btn-primary-blue'><?php echo $row1['rating']?>/5 Stars</button>
             </div>
-            <div class="top-rev-img">
-                <img src="../static/images/restos/kfc_seawoods.jpg" alt="">
+            <?php $row1 = mysqli_fetch_assoc($result1); ?>
+            <div class="top-rev">
+                <img src="../static/images/restos/<?php echo $row1['id']?>.jpg" alt=""><br>
+                <button class='btn-primary-blue'><?php echo $row1['rating']?>/5 Stars</button>
             </div>
-            <div class="top-rev-img">
-                <img src="../static/images/restos/kfc_seawoods.jpg" alt="">
+            <?php $row1 = mysqli_fetch_assoc($result1);?>
+            <div class="top-rev">
+                <img src="../static/images/restos/<?php echo $row1['id']?>.jpg" alt=""><br>
+                <button class='btn-primary-blue'><?php echo $row1['rating']?>/5 Stars</button>
             </div>
-            <div class="top-part-more">
-                <a>Click here for more</a>
+            <?php $row1 = mysqli_fetch_assoc($result1);?>
+            <div class="top-rev">
+                <img src="../static/images/restos/<?php echo $row1['id']?>.jpg" alt=""><br>
+                <button class='btn-primary-blue'><?php echo $row1['rating']?>/5 Stars</button>
             </div>
+        </div>
+        <div class="top-part-more">
+            <a>Click here for more</a>
         </div>
         <div class="catego">
             <ul> View by Cuisines - 
