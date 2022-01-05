@@ -1,0 +1,660 @@
+
+/* index page */
+.a-nav{
+    color: #ff6b81;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* CSS for navbar section */
+.navbar-s{
+    z-index: 2;
+    background-color: rgb(0, 0, 0);
+    position:sticky;
+    top:0;
+}
+.container-1{
+    display: flex;
+    max-height: 6em;
+}
+.logo-s{
+    width: 5%;
+}
+#logo-txt-real{
+    font-size: 1.75rem;
+    color: white;
+}
+.logo-txt{
+    color: white;
+    display: flex;
+    align-items: center;
+    max-height: fit-content;
+    padding-right: 1%;
+
+}
+.img-logo{
+    width: 80%;
+    vertical-align: middle;
+    margin:5%;
+    margin-left: 30% ;
+    padding-left: 10%;
+    min-height: 4em;
+}
+.log-btn{
+    line-height: 6em;
+    font-weight: bold;
+    width: 8%;
+    text-align: center;
+    margin-left: 5%;
+
+}
+.log-btn:hover{
+    border-radius: 100px;
+    background-color: white;
+}
+
+.menu{
+    line-height: 6em;
+    margin-left: auto;
+    width: 50%;
+}
+.menu ul{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu ul li{
+    margin: 0% 4.5%;
+    width:auto;
+    font-weight: bold;
+}
+.menu ul li:hover > ul{
+    display: block;
+    animation: dropDown 0.5s;
+
+}
+.menu ul ul{
+    display: none;
+    width: 150%;
+    margin-left: -26%;
+    text-align: center;
+}
+.dd-menu{
+    border-radius: 20px;
+    border: 2px solid white;
+    background-color: black;
+    color: #ff6b81;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* CSS for Restaurant Search Section */
+
+.food-search{
+    background-image: url(../static/images/bgs/index-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-top:12%;
+    
+}
+
+.food-search input[type="search"]{
+    width: 50%;
+    padding: 1%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+#btn-find{
+    background-color: #ff3150;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.8% 1%;    
+    border-radius: 5px;
+    font-size: 1.15rem;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+}
+
+/* CSS for Categories */
+.categories{
+    padding: 1% 0% 3% 0%;
+}
+
+.partner-container{
+    display: flex;
+    margin: 1% 3% 2% 3%;
+}
+.box{
+    width: calc(100%/3);
+    margin: 1%;
+}
+.imgn{
+    width: 106%;
+    height:102%;
+    vertical-align: middle;
+  }
+
+/* CSS for Limited Time Offers */
+
+#container-3{
+    display: flex;
+    flex-wrap:wrap;
+    margin: 0% 6% 1% 6%;
+}
+
+.food-menu{
+    background-color: #ececec;
+    padding: 1% 0% 0.5% 0%;
+}
+.food-menu-box{
+    display: flex;
+    flex-wrap: nowrap;
+    height: 30%;
+    width: 46%;
+    margin: 1%;
+    padding: 1%;
+    background-color: white;
+    border-radius: 15px;
+    max-height: 13.125em;
+    min-height: 13.125em;
+}
+.food-menu-add{
+    display: flex;
+    margin-top: auto;
+}
+.food-menu-add-text{
+    margin-right : 18%;
+}
+.food-menu-add-text button{
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    padding:6% 8%;    
+    border-radius: 5px;
+    font-size: 1.15rem;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+}
+.arith-cont{
+    display: flex;
+    visibility: hidden;
+}
+.btn-arith-lm{
+    border: none;
+    font-size: 1rem;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #6b93ff;
+    color: white;
+    cursor: pointer;
+    padding: 0rem 0.95rem;
+    margin: 0% 0.5rem;
+}
+.btn-arith-rp{
+    border: none;
+    font-size: 1rem;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #6b93ff;
+    color: white;
+    cursor: pointer;
+    padding: 0rem 0.95rem;
+    margin: 0% 0.5rem;
+}
+.counter{
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 15px;
+}
+.food-menu-img{
+    display: inline-block;
+    max-width: 10.5em;
+    width: 100%;
+    max-height: 13.125em;
+}
+.food-menu-img img{
+    max-height: 13.125em;
+    max-width: 10.5em;
+    min-width: 10.5em;
+    width: 106%;
+    height:102%;
+    vertical-align: middle;
+}
+
+.food-menu-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-left: 4%;
+    padding-top: 1%;
+    max-width: 32em;
+}
+
+.food-price{
+    font-size: 1.2rem;
+    margin: 2% 0;
+}
+.food-detail{
+    font-size: 1rem;
+    color: #747d8c;
+}
+
+/* explore page */
+#container-e{
+    width: 75%;
+    margin: 1% auto;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    vertical-align:middle;
+}
+.container form{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.container button img{
+    width: 50%;
+    max-height: 2.6em;
+    max-width: 2em;
+}
+#btn-near{
+    display: flex;
+    padding: 0.25em;
+}
+.main-search{
+    background-image: url(../static/images/bgs/explore-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    border-radius: 20px;
+    padding-top:12%;
+    opacity: 50%;
+}
+
+.main-search input[type="search"]{
+    width: 100%;
+    padding: 1%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    opacity: 100%;
+}
+#nearme{
+    display: flex;
+    justify-content: center;
+}
+.nearme-resto{
+    display: none;
+}
+.nearme-resto a{
+    text-decoration: none;
+    background-color: rgb(197, 219, 238);
+    color: rgb(136, 166, 192);
+    border-radius: 8px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding: 0.5em;
+    margin: 0.5em 0.25em;
+}
+.nearme-resto a:hover{
+    color:rgb(78, 129, 187);
+}
+#top-rev{
+    display: flex;
+    margin: 1% auto;
+    justify-content: center;
+}
+.top-rev-img img{
+    width: 20em;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0.25em;
+    margin-left: 0.5em;
+}
+
+/* my cart page  */
+
+#parent-cart{
+    width: 70%;
+    margin: 0% auto 0% auto;
+}
+.fitem-single{
+    display: flex;
+    padding: 0.6%;
+    margin: 0.33% auto 1% auto;
+    border : 2px solid #ff6b81;
+    border-radius: 20px;
+    width:  90%;
+    
+}
+.fitem-single-pic{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.fitem-single-pic img{
+    max-height: 11.125em;
+    min-height: 11.125em;
+    max-width: 10.5em;
+    min-width: 10.5em;
+    vertical-align: middle;
+}
+.fitem-single-text{
+    padding: 0% 1%;
+}
+.arith-cont-cart{
+    display: flex;
+    visibility: initial;
+    margin-top: 1%;
+}
+.cart-qty{
+    color: chocolate;
+    font-weight: bold;
+}
+.item-price{
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    padding : 0.05em;
+    display: inline-block;
+    border: 2px solid chocolate;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.vornv img{
+    width: 2%;
+}
+#cart-offer{
+    display: flex;
+}
+#total-amt{
+    display: block;
+    text-align: right;
+}
+[name = offer-id]{
+    width: 70%;
+    padding: 0.4em 0.5em;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+}
+[name = offer-submit]{
+    width: 15%;
+    margin: 0 1.4em;
+    cursor: pointer;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    background: rgb(199, 240, 199);
+}
+[name = offer-cancel]{
+    width: 15%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    background: rgb(240, 199, 199);
+}
+#cart-exit button{
+    padding: 0.75em;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    background: rgb(199, 240, 199);
+    width: 100%;
+    cursor: pointer;
+}
+#fitems-roll{
+    overflow-y: scroll;
+    height: 25em;
+    padding: 1em 0;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    margin-bottom: 1em;
+}
+
+#fitems-roll::-webkit-scrollbar {
+    width: 20px;
+  }
+#fitems-roll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+#fitems-roll::-webkit-scrollbar-thumb {
+    background: #ff6b81;
+    box-shadow: inset 0 0 5px rgb(207, 174, 174);
+    border-radius: 10px;
+  }
+#fitems-roll::-webkit-scrollbar-thumb:hover {
+    background: #ff4757; 
+  }
+#pymt-mthd{
+    display: flex;
+    margin-top: 1em;
+    width: 100%;
+    justify-content: center;
+}
+#cart-exit{
+    margin-top: 2em;
+}
+#cart-add{
+    margin-top: 0.5em;
+}
+/* profile page */
+.main-prof{
+    display: flex;
+    margin: auto;
+    width: 70%;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+.prof-menu{
+    min-width: 8em;
+    max-width: 8em;
+    border-right: 2px solid black;
+    background-color: #bfbebe5c;
+}
+#ord-prof{
+    visibility: hidden;
+    transform: translateX(+6em);
+    margin-top: 1%;
+    width: 0%;
+}
+#ord-prof table{
+    border: 2px solid black;
+}
+
+#edit-prof{
+    width: 116em;
+    justify-content: flex-end;
+}
+.prof-btn{
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 9.6em;
+    padding: 0.33em 0%;
+    margin: 1em 0em 0em 0em;
+}
+
+/* login page */
+.form-s{
+    display: flex;
+    margin: 1% auto;
+    width: 70%;
+}
+.container-2{
+    padding-top:2%;
+    margin-bottom:auto;
+    margin-right:2%;
+    width: 45%;
+}
+#subm-btn{
+    display: block !important;
+    margin: 0% auto 2% auto !important;
+}
+.log-form{
+    width: 100%;
+    margin : 0% 2%;
+}
+.ulog:hover + .rlog{
+    opacity: 5%;
+
+}
+.rlog:hover ~ .ulog{
+    opacity: 5%;
+
+}
+/* signup page */
+.form-s-u{
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+/* support page */
+#helpas{
+    background-image: url(../static/images/bgs/support-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+#helpas-txt{
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 9em;
+    padding-left: 5%;
+}   
+#prob-txt{
+    width: 100%;
+}
+.socials ul{
+    list-style-type: none;
+}
+.socials ul li{
+    display: inline;
+    padding: 1%;
+}
+
+/* for Order Section */
+.order{
+    width: 50%;
+    margin: 0 auto;
+}
+.input-responsive{
+    width: 96%;
+    padding: 1%;
+    margin-bottom: 3%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.order-label{
+    margin-bottom: 1%; 
+    font-weight: bold;
+}
+
+#recon{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:white;
+}
+
+/* CSS for Mobile Size or Smaller Screen */
+
+@media only screen and (max-width:768px){
+    .logo-s{
+        width: 25%;
+        margin-left: 31%;
+        
+    }
+    .log-btn{
+            line-height: 4em;
+            font-weight: bold;
+            width: 15%;
+            text-align: center;
+            margin-left: 5%;
+    }
+    .respon-nav{
+        margin: auto;
+    }
+    .navbar-s{
+        position: static;
+    }
+    .menu{
+        line-height: 2rem;
+        display: flex;
+        /* flex-direction: column; */
+        margin: auto;
+        /* font-size: 0rem; */
+        width: 80%;
+    }
+    .container-1{
+        display: flex;
+        flex-direction: column;
+        max-height: fit-content;
+        justify-content: center;
+    }
+    .menu ul{
+        text-align: center;
+        margin: auto;
+        justify-content: center;
+    }
+
+    .food-search input[type="search"]{
+        width: 90%;
+        padding: 2%;
+        margin-bottom: 10%;
+    }
+
+    .btn{
+        width: 75%;
+        padding: 2%;
+    }
+
+    .food-search{
+        padding: 10%;
+    }
+
+    .categories{
+        padding: 20% 0;
+    }
+    h2{
+        margin-bottom: 10%;
+    }
+    .box-3{
+        width: 100%;
+        margin: 4% auto;
+    }
+
+    .food-menu{
+        padding: 20% 0;
+    }
+
+    .food-menu-box{
+        width: 90%;
+        padding: 5%;
+        margin-bottom: 5%;
+    }
+    .food-menu-desc{
+        width:50%;
+    }
+    .food-detail{
+        display: none;
+    }
+    .food-menu-img{
+        width:51%;
+        padding-right: 2%;
+    }
+    .footer{
+        padding: 0.5em 0;
+        position:static !important;
+    }
+    .order{
+        width: 100%;
+    }
+}
