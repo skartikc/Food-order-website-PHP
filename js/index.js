@@ -2,12 +2,14 @@
 if(document.getElementById('set-cart').getAttribute('data-logstat')=="1"){
     var mycartStr = document.getElementById('set-cart').getAttribute('data-cart');
     console.log("1. mycartstr is " + mycartStr);
+    oldmycartStr = mycartStr
     mycartStr = JSON.parse(mycartStr);
 }
 
 window.onbeforeunload = function(){
     if(document.getElementsByClassName('fitem-single') || document.getElementsByClassName('food-menu-add'))
-        myfun();
+        if(oldmycartStr!=JSON.stringify(mycartStr))
+            myfun();
 };
 
 // generic functions

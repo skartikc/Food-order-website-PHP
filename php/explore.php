@@ -8,10 +8,21 @@
         $query = "select * from mycart where phnum='".$_SESSION['phone']."'";
         $result = mysqli_query($conn,$query);
         $row = mysqli_fetch_assoc($result);
+        $cartstr = json_decode($row['fitems']);
+    }
+    else
+    {
+        $cartstr=null;
     }
     $query1 = "select rname, id, rating from resto ORDER BY rating DESC";
     $result1 = mysqli_query($conn,$query1);
     $row1 = mysqli_fetch_assoc($result1);
+    if($cartstr != null)
+    {
+        $query0 = "select * from fitems where srno=".$cartstr[0][0].$cartstr[0][1];
+        $res0 = mysqli_query($conn, $query0);
+        $row0 = mysqli_fetch_assoc($res0);  //row0 for chkResto (current item restaurant should match cart restaurant)
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,11 +38,19 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/style-r.css">
     <link rel="stylesheet" href="../css/custom-bootstrap.css">
-    <script src="../js/index.js"></script>
     <title>BitesBank - Explore</title>
 </head>
 <body>
     <?php include('partials/header.php'); ?>
+    <div id="set-cart" data-cart='<?php echo json_encode($cartstr); ?>' 
+                       data-logstat='<?php 
+                                        if(isset($_SESSION['login']))
+                                            echo "1"; 
+                                        else 
+                                            echo "0";
+                                    ?>'>
+    </div>
+    <script src="../js/index.js"></script>
     <div id="container-e">
         <section class="main-search text-center">
             <div class="container">  
@@ -100,15 +119,43 @@
             </div>
         </div>
         <div class="top-part-more">
-            <a>Click here for more</a>
+            <a class="btn-primary-blue">Click here for more</a>
         </div>
-        <div class="catego">
-            <ul> View by Cuisines - 
-                <li>Pizza</li>
-                <li>Burger</li>
-                <li>Indian</li>
-                <li>Chinese</li>
-            </ul>
+        <br>
+        <hr>
+        <br>
+        <div id="categ">
+            <form action="explore.php" method="POST">
+                View by Categories -
+                <select name='categ'>  
+                    <option value="Burger">Burger</option>
+                    <option value="Ice-cream">Ice-cream</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Indian">Indian</option>
+                </select>
+                <button type="submit" class="btn-primary">Search</button>
+            </form>
+            <?php if($_SERVER['REQUEST_METHOD']=="POST")
+                  {
+                     $categ=$_POST['categ'];
+                     $query2="select * from fitems where categ='$categ'";
+                     $result2 = mysqli_query($conn, $query2);
+                     $row2 = mysqli_fetch_assoc($result2);
+                     for($i=0;$i<mysqli_num_rows($result2);$i++)
+                     {
+                        if(isset($_SESSION['phone']) && $cartstr != null)
+                        {
+                            if($row0['rname']==$row2['rname'])
+                                $chkResto = 1;
+                            else    
+                                $chkResto = 0;
+                        }
+                        else 
+                            $chkResto = 0;
+                        disp_fitem_explore($imgpath,$row2,$i,$chkResto);
+                        $row2 = mysqli_fetch_assoc($result2);
+                     }                  
+                  }?>
         </div>
     </div>
 

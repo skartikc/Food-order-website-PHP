@@ -84,6 +84,51 @@ function disp_fitem_cart($imgpath,$row,$q){
             </div>
             ";
 }
+function disp_fitem_explore($imgpath,$row,$i,$chkResto){
+    echo "
+            <div class='fitem-single'>
+            <div class='fitem-single-pic'>
+            <img src='".$imgpath.$row['fimg']."' alt='fitem'>
+            </div>
+            <div class='fitem-single-text'>
+                <div>
+                    <h3>".$row['fname']."</h3><h4>".$row['rname']."</h4>
+                </div>
+                <div>
+                    <p>".$row['fdesc']."</p>
+                </div>
+                
+                    <div class='item-price'> Rs. ".$row['fprice']."</div>
+                
+                <div class='vornv'>
+                    <img src='";
+    if($row['vegstat']==1)
+        echo $imgpath.'icons/veg.png';
+    else 
+        echo $imgpath.'icons/non-veg.png';           
+    echo "'alt='fitem-vornv'>
+            </div>
+            <div class='food-menu-add'>
+            <div class='food-menu-add-text'>
+                <button id='ATCBTN".$i."' class='ATCBtn' onclick='AddCartClick(".$i.", ".$row['srno'].", ".$chkResto.")'>Add to Cart</button>
+                </div>
+                <div class='arith-cont'>
+                <button class='btn-arith-lm' onclick='LTOminus(this, ".$row['srno'].")'>-</button>
+                <button class= 'counter' ></button>
+                <button class='btn-arith-rp' onclick='LTOplus(this, ".$row['srno'].")'>+</button>
+                </div>
+                </div>
+                </div>
+                </div>  
+                <script>
+                AddCartPre(".$i.", ".$row['srno'].");
+                
+                </script>
+            </div>
+            </div>
+            </div>
+            ";
+}
 
 function disp_fitem_LTO($imgpath,$row,$i,$chkResto){
     echo "

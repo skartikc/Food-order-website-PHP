@@ -3,7 +3,7 @@
 .a-nav{
     color: #ff6b81;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.05rem;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -172,7 +172,7 @@
     margin-top: auto;
 }
 .food-menu-add-text{
-    margin-right : 18%;
+    margin-right : 5%;
 }
 .food-menu-add-text button{
     background-color: #ff6b81;
@@ -249,10 +249,7 @@
 }
 
 /* explore page */
-/* #container-e{
-    width: 75%;
-    margin: 1% auto;
-} */
+
 .container{
     display: flex;
     justify-content: center;
@@ -314,7 +311,7 @@
 #top-rev{
     display: flex;
     background-color: rgb(243, 240, 240);
-    margin: 1% auto;
+    margin-bottom: 1%;
     justify-content: center;
 }
 .top-rev{
@@ -340,6 +337,21 @@
     display: flex;
     justify-content: center;
 }
+
+#categ form{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+#categ form select{
+    padding: 0.9%;
+    background-color: rgb(209, 245, 233);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
 /* my cart page  */
 
 #parent-cart{
