@@ -3,7 +3,7 @@
     include('../partials/dbconn.php');
     sesh_start();
     $imgpath = "../../static/images/";
-    $query = "select * from fitems where rname='".$_SESSION['resid']."'";
+    $query = "select * from fitems where id='".$_SESSION['resid']."'";
     $res = mysqli_query($conn, $query);
     $num = mysqli_num_rows($res);
 ?>
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/style-r.css">
     <link rel="stylesheet" href="../../css/custom-bootstrap.css">
+    <script src="../../js/index-r.js"></script>
 </head>
 <body>
     <?php include("../partials/header-r.php") ?>
@@ -56,10 +57,10 @@
             echo "'alt='fitem-vornv'>
                     </div>
                     <div class='fitem-actions'>
-                        <button class='btn-primary-blue'>Edit Price</button>
-                        <button class='btn-primary-blue'>Edit Name</button>
-                        <button class='btn-primary-blue'>Veg/Non-veg</button>
-                        <button class='btn-primary-blue'>Delete Item</button>
+                        <button class='btn-primary-blue' onclick='rEditPrice(".$row['srno'].")'>Edit Price</button>
+                        <button class='btn-primary-blue' onclick='rEditName(".$row['srno'].")'>Edit Name</button>
+                        <button class='btn-primary-blue' onclick='rEditVegStat(".$row['srno'].")'>Veg/Non-veg</button>
+                        <button class='btn-primary-blue' onclick='rDeleteItem(".$row['srno'].")'>Delete Item</button>
                     </div>
                 </div>
             </div>
